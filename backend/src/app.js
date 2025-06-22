@@ -36,6 +36,9 @@ app.use(compression());
 
 // Here our API Routes
 
+const queryRoutes = require('./routes/appRoutes/queryRoutes');
+app.use('/api/query', queryRoutes);
+
 app.use('/api', coreAuthRouter);
 app.use('/api', adminAuth.isValidAuthToken, coreApiRouter);
 app.use('/api', adminAuth.isValidAuthToken, erpApiRouter);

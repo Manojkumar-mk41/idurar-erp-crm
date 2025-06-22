@@ -75,7 +75,21 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <CreditCardOutlined />,
       label: <Link to={'/payment'}>{translate('payments')}</Link>,
     },
-
+    {
+      key: 'query',
+      icon: <FileOutlined />,
+      label: translate('query'),
+      children: [
+        {
+          key: 'query_list',
+          label: <Link to="/query">{translate('query_list')}</Link>,
+        },
+        {
+          key: 'query_create',
+          label: <Link to="/query/create">{translate('add_new_query')}</Link>,
+        },
+      ],
+    },
     {
       key: 'paymentMode',
       label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,

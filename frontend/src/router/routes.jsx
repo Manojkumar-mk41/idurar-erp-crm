@@ -28,6 +28,11 @@ const Taxes = lazy(() => import('@/pages/Taxes'));
 const Profile = lazy(() => import('@/pages/Profile'));
 
 const About = lazy(() => import('@/pages/About'));
+const Query = lazy(() => import('@/pages/Query/index'));
+const QueryCreate = lazy(() => import('@/pages/Query/QueryCreate'));
+const QueryRead = lazy(() => import('@/pages/Query/QueryRead'));
+const QueryUpdate = lazy(() => import('@/pages/Query/QueryUpdate'));
+const QueryNote = lazy(() => import('@/pages/Query/QueryNote')); // Optional, if you build a separate note view
 
 let routes = {
   expense: [],
@@ -93,6 +98,27 @@ let routes = {
       path: '/payment',
       element: <Payment />,
     },
+    {
+      path: '/query',
+      element: <Query />,
+    },
+    {
+      path: '/query/create',
+      element: <QueryCreate />,
+    },
+    {
+      path: '/query/read/:id',
+      element: <QueryRead />,
+    },
+    {
+      path: '/query/update/:id',
+      element: <QueryUpdate />,
+    },
+    {
+      path: '/query/notes/:id',
+      element: <QueryNote />, // Optional
+    },
+
     {
       path: '/payment/read/:id',
       element: <PaymentRead />,
